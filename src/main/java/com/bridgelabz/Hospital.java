@@ -10,6 +10,16 @@ public class Hospital {
     private String hospitalName;
     private String address;
 
+    private Integer hospitalId;
+
+    public int getHospitalId() {
+        return hospitalId;
+    }
+
+    public void setHospitalId(int hospitalId) {
+        this.hospitalId = hospitalId;
+    }
+
     List<Patient> patientList=new ArrayList<>();
     public Hospital(){
 
@@ -80,11 +90,12 @@ public class Hospital {
     }
 
     public void addMultiplePatient(){
-
+        int choice=0;
+        do {
         System.out.println("Please enter the Choice");
         System.out.println("1.Add Patient, 2.Delete Patient, 3.Display Patient 4.editPatient, 5.exit");
-        int choice=scanner.nextInt();
-        do {
+        choice=scanner.nextInt();
+
             switch (choice) {
                 case 1:
                     addPatient();
@@ -98,10 +109,14 @@ public class Hospital {
                 case 4:
                     editPatient();
                     break;
+                case 5:
+//                    System.exit(0);
+                    break;
                 default:
                     System.out.println("Wrong Choice Entered");
                     addMultiplePatient();
             }
+//            System.out.println("Outside switch");
         }while(choice!=5);
 
     }
@@ -130,6 +145,15 @@ public class Hospital {
     }
 
     private void delPatient() {
-        //stram
+
+    }
+
+    public void editOldHospital() {
+        System.out.println("Enter the Hospital name");
+        String hospitalName = scanner.next();
+        setHospitalName(hospitalName);
+        System.out.println("Enter the Hospital Address");
+        String hospitalAddress = scanner.next();
+        setAddress(hospitalAddress);
     }
 }

@@ -2,11 +2,8 @@ package com.bridgelabz;
 
 import java.util.Scanner;
 
-public class Patient {
+public class Patient extends Person{
     static Scanner scanner=new Scanner(System.in);
-    private String name;
-    private String phoneNumber;
-    private int age;
     private int patientId;
     private String diagnosis;
    public Patient(){
@@ -75,9 +72,6 @@ public class Patient {
         System.out.println("Enter the patient name");
         String name=scanner.next();
         setName(name);
-        System.out.println("Enter the PatientID");
-        int patientId=scanner.nextInt();
-        setPatientId(patientId);
         System.out.println("Enter the age");
         int age=scanner.nextInt();
         setAge(age);
